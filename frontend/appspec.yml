@@ -1,14 +1,15 @@
-version: 0.2
-phases:
-  install:
-    commands:
-      - echo "Installing dependencies (if any)..."
-  build:
-    commands:
-      - echo "Preparing build artifacts..."
-artifacts:
-  files:
-    - frontend/app.py
-    - frontend/appspec.yml
-    - frontend/requirements.txt
-    - frontend/scripts/**/*
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /home/ec2-user/simple-webapp
+hooks:
+  ApplicationStop:
+    - location: scripts/stop_server.sh
+      timeout: 20
+  BeforeInstall:
+    - location: scripts/install_dependencies.sh
+      timeout: 300
+  ApplicationStart:
+    - location: scripts/start_server.sh
+      timeout: 60
