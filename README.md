@@ -33,6 +33,7 @@ Terraform is the tool that creates AWS resources automatically.
    ```powershell
    terraform version
    ```
+   Notes: Alternatively you can use scoop for installing terraform https://scoop.sh/#/
 
 **Mac:**
 ```bash
