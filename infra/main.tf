@@ -621,7 +621,7 @@ resource "aws_codepipeline" "pipeline" {
 
       configuration = {
         ConnectionArn        = aws_codestarconnections_connection.github.arn
-        FullRepositoryId     = "kouong/aws-group-yde" # Your GitHub repo
+        FullRepositoryId     = "gerkocamer/aws-group-yde" # Your GitHub repo
         BranchName           = "main"                 # Which branch to monitor
         OutputArtifactFormat = "CODE_ZIP"             # Package source as a zip file
         DetectChanges        = true                   # Automatically trigger on new commits
